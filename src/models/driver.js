@@ -22,9 +22,11 @@ module.exports = () => {
 			require: true,
 			unique: true,
 		},
-		vehiclesId: [{
-			type: String,
-		}],
+		vehiclesId: [
+			{
+				type: String,
+			}			
+		],
 		createdAt: {
 			type: Date,
 			default: Date.now,

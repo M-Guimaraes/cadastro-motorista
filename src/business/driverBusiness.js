@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = ({ Driver, Vehicle, errorUtil }) => {
+module.exports = ({ Driver, errorUtil }) => {
 	return {
 		createDriver: async driver => {
 			const newDriver = await Driver.create(driver);
@@ -36,15 +36,20 @@ module.exports = ({ Driver, Vehicle, errorUtil }) => {
 			return { message: 'Driver updated' };
 		},
 		createInputVehicle: async (driverId, payload) => {
-			const vehicle = payload
+			const vehicle = payload.vehiclesId;
 			const driver = await Driver.findOne({
 				_id: driverId,
 			});
+			const vehicles = driver.vehiclesId;
 
-			const result = await driver.vehiclesI.push(vehicle)
-			await driver.save();
-			
-			return result	
+			try {
+				if (vehicle != vehicles) 
+				return await vehicles.push(vehicle);
+				await driver.save();
+				
+			} catch (err) {
+				return { message: 'Vehicle included' };
+			}
 		},
 	};
 };

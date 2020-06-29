@@ -56,7 +56,8 @@ module.exports = ({ driverBusiness, vehicleBusiness }) => {
 			const payload = req.body;
 			const driverId = req.params.driverId;
 			const result = await driverBusiness.createInputVehicle(driverId, payload);
-			res.status(200).send(result);
+			res.send(result);
+			
 
 		}
 	};
