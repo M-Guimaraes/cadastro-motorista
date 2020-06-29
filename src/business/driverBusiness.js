@@ -36,13 +36,15 @@ module.exports = ({ Driver, Vehicle, errorUtil }) => {
 			return { message: 'Driver updated' };
 		},
 		createInputVehicle: async (driverId, payload) => {
-
+			const vehicle = payload
 			const driver = await Driver.findOne({
 				_id: driverId,
 			});
 
-	
-	
+			const result = await driver.vehiclesI.push(vehicle)
+			await driver.save();
+			
+			return result	
 		},
 	};
 };
