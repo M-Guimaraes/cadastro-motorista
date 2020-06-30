@@ -1,21 +1,21 @@
 # API para cadastro de motorista e veículos
 
-# Instalação
+## Instalação
 
 Na pasta raíz do projeto execute `npm install`
 para instalar as dependências
 
-# Para iniciar
+## Para iniciar
 
 Execute `npm start`
 
-# Para finalizar
+## Para finalizar
 
 Execute o script `CRTL + C` na pasta raíz
 
-## Driver CRUD
+# Driver CRUD
 
-# Para incluir motorista
+## Para incluir motorista
 
 Insira os dados no payload na rota http://localhost/api/driverCreate
 {
@@ -25,7 +25,7 @@ Insira os dados no payload na rota http://localhost/api/driverCreate
 "birthDate": "YYYY-MM-DD"
 }
 
-# Para atualizar os dados do motorista
+## Para atualizar os dados do motorista
 
 Insira qualquer um dos dados abaixo no payload na rota http://localhost/api/driverUpdate/:driverID
 {
@@ -36,24 +36,24 @@ Insira qualquer um dos dados abaixo no payload na rota http://localhost/api/driv
 "birthDate": "YYYY-MM-DD"
 }
 
-# Para listar os dados e motoristas cadastrados
+## Para listar os dados e motoristas cadastrados
 
 Acesse a rota http://localhost/api/drivers
 
-# Para apagar o motorista cadastrado
+## Para apagar o motorista cadastrado
 
 Acesse a rota http://localhost/api/driverDelete/:driverId
 
-# Para incluir id do veículo nos dados do motorista cadastrado
+## Para incluir id do veículo nos dados do motorista cadastrado
 
 Insira o id do veículo no payload aa rota http://localhost/api/inputVehicle/:driverId
 {
 "vehiclesId": "id"
 }
 
-## Vehicle CRUD
+# Vehicle CRUD
 
-# Para incluir veículo
+## Para incluir veículo
 
 Insira os dados no payload na rota http://localhost/api/vehicleCreate
 {
@@ -62,7 +62,7 @@ Insira os dados no payload na rota http://localhost/api/vehicleCreate
 "renavamNumber": "renavam"
 }
 
-# Para atualizar os dados do veículo
+## Para atualizar os dados do veículo
 
 Insira qualquer um dos dados abaixo no payload na rota http://localhost/api/vehicleUpdate/:vehicleID
 {
@@ -71,10 +71,10 @@ Insira qualquer um dos dados abaixo no payload na rota http://localhost/api/vehi
 "renavamNumber": "renavam"
 }
 
-# Para listar os veículos cadastrados
+## Para listar os veículos cadastrados
 
 Acesse a rota http://localhost/api/vehicles
 
-# Para apagar o veículo cadastrado
+## Para apagar o veículo cadastrado
 
 Acesse a rota http://localhost/api/vehicleDelete/:vehicleId
