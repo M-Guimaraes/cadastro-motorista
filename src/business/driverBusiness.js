@@ -41,7 +41,7 @@ module.exports = ({ Driver, errorUtil }) => {
 				_id: driverId,
 			});
 			const vehicles = driver.vehiclesId
-			await vehicles.push(vehicle);
+			vehicles.push(vehicle);
 			
 			await driver.save();
 			return { message: 'Vehicle included' };
