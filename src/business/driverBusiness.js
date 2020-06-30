@@ -40,16 +40,12 @@ module.exports = ({ Driver, errorUtil }) => {
 			const driver = await Driver.findOne({
 				_id: driverId,
 			});
-			const vehicles = driver.vehiclesId;
+			const vehicles = driver.vehiclesId
+			await vehicles.push(vehicle);
+			
+			await driver.save();
+			return { message: 'Vehicle included' };
 
-			try {
-				if (vehicle != vehicles) 
-				return await vehicles.push(vehicle);
-				await driver.save();
-				
-			} catch (err) {
-				return { message: 'Vehicle included' };
-			}
 		},
 	};
 };
