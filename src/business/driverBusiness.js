@@ -40,12 +40,17 @@ module.exports = ({ Driver, errorUtil }) => {
 			const driver = await Driver.findOne({
 				_id: driverId,
 			});
-			const vehicles = driver.vehiclesId
-			await vehicles.push(vehicle);
-			
+			const vehicles = driver.vehiclesId;
+
+			const vehicleAlreadyExists = vehicles.includes(vehicle);
+
+			if (vehicleAlreadyExists === true)
+				return { message: 'Vehicle already exists' };
+
+			vehicles.push(vehicle);
+
 			await driver.save();
 			return { message: 'Vehicle included' };
-
 		},
 	};
 };
